@@ -1,0 +1,88 @@
+barang=["kursi","kasur"]
+
+def tambah():
+    print('='*30)
+    tmb_brg = input("Masukkan barang yang akan di tambahkan :")
+    barang.append(tmb_brg)
+    print("hasil setelah di tambahkan", barang)
+    
+def hapus():
+    print('='*30)
+    print("List barang sekarang", barang)
+  
+    hps_brg = input('Masukkan brg yg mau di hapus:')
+  
+    if(hps_brg in barang):
+      barang.remove(hps_brg)
+      print("hasil setelah di hapus", barang)
+
+def edit():
+  print('='*30)
+
+  edit_barang = input("Masukkan nama barang terbaru:")
+  barang[0] = edit_barang
+  print("hasil setelah di edit", barang)
+  
+def menampilkan():
+  print('='*30)
+  print("List semua barang")
+  print('='*30)
+  
+  for i in barang:
+    print(i)
+
+def mengecek():
+  print('='*30)
+  print("List semua barang")
+  print('='*30)
+  
+  for i in barang:
+    print(i)
+
+  cek_brg = input("Masukkan barang yang ingin diketahui:")
+
+  if(cek_brg in barang):
+    print("Nama barang sudah ada dalam list")
+  else:
+    print("Nama barang tidak ada dalam list")
+
+def menampilkanIndex():
+  print('='*30)
+  brg_cek = input("Masukkan nama barang:")
+
+  if(brg_cek in barang):
+    for i in range(len(barang)):
+      if(brg_cek == barang[i]):
+        print("Index nama barang adalah", i)
+  else:
+    print("Nama barang tidak ada dalam list")
+  
+def menu():
+while True:
+  print('='*30);
+  print("PROGRAM BARANG".center(30,'='))
+  print('='*30)
+   
+  print("1. Tambah Barang,")
+  print("2. Hapus Barang,")
+  print("3. Edit Barang,")
+  print("4. Menampilkan Semua Barang,")
+  print("5. Mengecek Barang,")
+  print("6. Menampilkan Index Barang,")
+
+  pilihan = int(input("Pilih menu \t:"))
+
+  if(pilihan == 1):
+    tambah();
+  elif(pilihan == 2):
+    hapus()
+  elif(pilihan == 3):
+    edit()
+  elif(pilihan == 4):
+    menampilkan()
+  elif(pilihan == 5):
+    mengecek()
+  elif(pilihan == 6):
+    menampilkanIndex()
+
+menu()
